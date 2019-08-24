@@ -1,4 +1,5 @@
 CFLAGS = -O0 -Wall -ggdb2
+PREFIX ?= /usr/local
 
 all: litex-devmem2
 
@@ -13,3 +14,5 @@ litex-devmem2: etherbone.o litex-devmem2.o
 
 clean:
 	rm -f etherbone.o litex-devmem2.o
+install:
+	install -t $(PREFIX)/bin/ litex-devmem2
