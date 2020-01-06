@@ -5,6 +5,8 @@ set -ex
 # TODO This is the "test phase", tweak it as you see fit
 main() {
     cd wishbone-tool
+
+    export CI_FREEBSD_HEADERS=/usr/include/freebsd
     cross build --target $TARGET
     cross build --target $TARGET --release
 
